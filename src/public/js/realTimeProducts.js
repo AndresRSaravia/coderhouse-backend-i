@@ -60,10 +60,8 @@ function loadProduct(product){
 	btn.className = 'delete'
 	btn.type = 'submit'
 	btn.addEventListener('click', () => {
-		console.log("LLEGÓ")
 		socket.emit('deleteProduct', product.id);
 	})
     productContainer.appendChild(productElement);
     productContainer.appendChild(btn);
-	console.log(productElement,btn);
 }
