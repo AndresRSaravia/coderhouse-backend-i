@@ -57,6 +57,6 @@ socketServer.on('connection', (socket) => {
 		productManager.deleteProduct(pid);
 		const products = productManager.readProducts()
         console.log(products);
-        socketServer.emit('loadProducts', products);
+    	//socketServer.emit('loadProducts', products);
     })
 })
