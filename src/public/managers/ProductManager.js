@@ -19,7 +19,11 @@ class ProductManager {
 	createProduct(product){
 		try{
 			let products = this.readProducts();
-			product["id"] = (Math.max.apply(Math, products.map((product) => product.id))+1).toString()
+			if (products.length == 0) {
+				product["id"] = "0";
+			}else{
+				product["id"] = (Math.max.apply(Math, products.map((product) => product.id))+1).toString()
+			}
 			product["thumbnails"] = "../public/img/" + product["thumbnails"]
 			products.push(product);
 			fs.writeFileSync(this.filePath, JSON.stringify(products, null, 2));
@@ -51,6 +55,7 @@ class ProductManager {
 			let products = this.readProducts();
 			const index = products.findIndex(p => p.id === pid.toString())
 			if(index === -1){
+				console.log("Producto no encontrado.");
 				return -1
 			}else{
 				products.splice(index,1);

@@ -1,4 +1,5 @@
 import fs from 'fs';
+import ProductManager from "./public/managers/ProductManager.js";
 import express from 'express';
 import handlebars from 'express-handlebars';
 import __dirname from './utils.js';
@@ -34,7 +35,7 @@ app.use('/api/products',productRouter);
 app.use('/products',viewsProductRouter);
 app.use('/realtimeproducts',realTimeProductsRouter);
 
-let products = JSON.parse(fs.readFileSync('src/public/json/products.json'));
+const productManager = new ProductManager('src/public/json/products.json');
 const socketServer = new Server(httpServer);
 socketServer.on('connection', (socket) => {
 	console.log('Nueva conexión.')
@@ -43,28 +44,18 @@ socketServer.on('connection', (socket) => {
         console.log(data);
     });
 
-	socket.emit('loadProducts', products);
+	socket.emit('loadProducts', productManager.readProducts());
 
     socket.on('newProduct', (product) => {
-        const newProduct = product
-		if (products.length == 0) {
-			product["id"] = "0";
-		}else{
-			product["id"] = (Math.max.apply(Math, products.map((product) => product.id))+1).toString()
-		}
-        products.push(newProduct);
+		productManager.createProduct(product);
+		products = productManager.readProducts()
         console.log(products);
-        socketServer.emit('newProduct', newProduct);
+        socketServer.emit('newProduct', products[-1]);
     })
 
     socket.on('deleteProduct', (pid) => {
-		const index = products.findIndex(p => p.id === pid.toString())
-		if(index === -1){
-			console.log("Producto no encontrado.");
-		}else{
-			products.splice(index,1);
-			console.log('Producto eliminado exitosamente.');
-		}
+		productManager.deleteProduct(pid);
+		products = productManager.readProducts()
         console.log(products);
         socketServer.emit('loadProducts', products);
     })
