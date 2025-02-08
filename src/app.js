@@ -6,7 +6,6 @@ import cartRouter from './routes/carts.router.js';
 import productRouter from './routes/products.router.js';
 import viewsProductRouter from './routes/index.router.js';
 import realTimeProductsRouter from './routes/views.router.js';
-import chatRouter from './routes/chat.router.js';
 import path from 'path';
 import {Server} from 'socket.io';
 
@@ -33,7 +32,6 @@ app.use('/api/carts',cartRouter);
 app.use('/api/products',productRouter);
 app.use('/products',viewsProductRouter);
 app.use('/realtimeproducts',realTimeProductsRouter);
-app.use('/chat', chatRouter);
 
 const messages = [];
 const socketServer = new Server(httpServer);

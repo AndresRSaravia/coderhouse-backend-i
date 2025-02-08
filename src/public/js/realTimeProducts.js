@@ -30,8 +30,6 @@ function cargarMensaje(message){
     messageContainer.appendChild(messageElement);
 }
 
-
-
 const titleInput = document.getElementById('titleInput');
 const descriptionInput = document.getElementById('descriptionInput');
 const codeInput = document.getElementById('codeInput');
