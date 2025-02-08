@@ -20,6 +20,7 @@ class ProductManager {
 		try{
 			let products = this.readProducts();
 			product["id"] = (Math.max.apply(Math, products.map((product) => product.id))+1).toString()
+			product["thumbnails"] = "../public/img/" + product["thumbnails"]
 			products.push(product);
 			fs.writeFileSync(this.filePath, JSON.stringify(products, null, 2));
 			console.log('Producto creado exitosamente.');

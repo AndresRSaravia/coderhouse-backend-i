@@ -2,7 +2,7 @@ import {Router} from 'express';
 import CartManager from "../managers/CartManager.js";
 
 const router = Router();
-const cartManager = new CartManager('src/json/carts.json');
+const cartManager = new CartManager('src/public/json/carts.json');
 
 // Métodos GET para carritos
 router.get('/:cid', function (req, res) {

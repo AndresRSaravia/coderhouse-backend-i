@@ -1,0 +1,11 @@
+<p>Inicio de listado</p>
+	<div>
+	{{#each products}}
+		<div>
+			<p><strong>{{this.title}}</strong> (id={{this.id}}): {{this.description}}</p>
+			<ul><strong>Código, status y categoría</strong>: {{this.code}}, {{this.status}} y {{this.category}}</ul>
+			<ul><strong>Precio y stock</strong>: ${{this.price}} y {{this.stock}} unidades</ul>
+		</div>
+	{{/each}}
+	</div>
+<p>Fin de listado</p>

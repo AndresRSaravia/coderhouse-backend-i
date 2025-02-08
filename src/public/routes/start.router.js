@@ -10,5 +10,4 @@ router.get('/about',(req,res) => {
 	res.send('Sobre algo');
 });
 
-
-export default router
+export default router;
