@@ -1,3 +1,4 @@
+import fs from 'fs';
 import express from 'express';
 import handlebars from 'express-handlebars';
 import __dirname from './utils.js';
@@ -33,7 +34,7 @@ app.use('/api/products',productRouter);
 app.use('/products',viewsProductRouter);
 app.use('/realtimeproducts',realTimeProductsRouter);
 
-let products = [];
+let products = JSON.parse(fs.readFileSync('src/public/json/products.json'));
 const socketServer = new Server(httpServer);
 socketServer.on('connection', (socket) => {
 	console.log('Nueva conexión.')
