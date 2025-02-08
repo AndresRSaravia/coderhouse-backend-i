@@ -48,14 +48,14 @@ socketServer.on('connection', (socket) => {
 
     socket.on('newProduct', (product) => {
 		productManager.createProduct(product);
-		products = productManager.readProducts()
+		const products = productManager.readProducts()
         console.log(products);
-        socketServer.emit('newProduct', products[-1]);
+        socketServer.emit('newProduct', product);
     })
 
     socket.on('deleteProduct', (pid) => {
 		productManager.deleteProduct(pid);
-		products = productManager.readProducts()
+		const products = productManager.readProducts()
         console.log(products);
         socketServer.emit('loadProducts', products);
     })
