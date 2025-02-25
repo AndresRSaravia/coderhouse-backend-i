@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from "dotenv";
 import handlebars from 'express-handlebars';
+import methodOverride from 'method-override';
 import __dirname from './utils.js';
 import indexRouter from './routes/index.router.js';
 import cartRouter from './routes/carts.router.js';
@@ -40,6 +41,9 @@ app.set('view engine', 'handlebars')
 
 // Configuración para archivos estáticos
 app.use(express.static(path.join(__dirname,'/public')))
+
+// Method Override
+app.use(methodOverride('_method'));
 
 // Configuración para routers
 app.use('/',indexRouter);
