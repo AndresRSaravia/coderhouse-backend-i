@@ -7,7 +7,7 @@ const cartCollection = "Carritos";
 //Definirmos el esquema para el estudiante
 const cartSchema = new Schema({
 	products: [{
-		_id : {type: String, required: true},
+		_id : {type: Schema.Types.ObjectId, ref: 'Productos', required: true},
 		quantity : {type: Number, required: true},
 	}], //
 });
