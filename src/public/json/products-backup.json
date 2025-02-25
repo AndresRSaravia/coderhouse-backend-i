@@ -1,6 +1,5 @@
 [
 	{
-		"id": "0",
 		"title": "Producto 0",
 		"description": "Descripción 0",
 		"code": "Código 0",
@@ -8,10 +7,9 @@
 		"status": false,
 		"stock": 30,
 		"category": "Categoría 0",
-		"thumbnails": "../img/product000.png"
+		"thumbnail": "../img/product000.png"
 	},
 	{
-		"id": "1",
 		"title": "Producto 1",
 		"description": "Descripción 1",
 		"code": "Código 1",
@@ -19,10 +17,9 @@
 		"status": false,
 		"stock": 31,
 		"category": "Categoría 1",
-		"thumbnails": "../img/product000.png"
+		"thumbnail": "../img/product000.png"
 	},
 	{
-		"id": "2",
 		"title": "Producto 2",
 		"description": "Descripción 2",
 		"code": "Código 2",
@@ -30,10 +27,9 @@
 		"status": false,
 		"stock": 32,
 		"category": "Categoría 2",
-		"thumbnails": "../img/product000.png"
+		"thumbnail": "../img/product000.png"
 	},
 	{
-		"id": "3",
 		"title": "Producto 3",
 		"description": "Descripción 3",
 		"code": "Código 3",
@@ -41,10 +37,9 @@
 		"status": false,
 		"stock": 33,
 		"category": "Categoría 3",
-		"thumbnails": "../img/product000.png"
+		"thumbnail": "../img/product000.png"
 	},
 	{
-		"id": "4",
 		"title": "Descripción 4",
 		"description": "Descripción 4",
 		"code": "Código 4",
@@ -52,10 +47,9 @@
 		"status": false,
 		"stock": 34,
 		"category": "Categoría 4",
-		"thumbnails": "../img/product000.png"
+		"thumbnail": "../img/product000.png"
 	},
 	{
-		"id": "5",
 		"title": "Producto 5",
 		"description": "Descripción 5",
 		"code": "Código 5",
@@ -63,10 +57,9 @@
 		"status": false,
 		"stock": 35,
 		"category": "Categoría 5",
-		"thumbnails": "../img/product000.png"
+		"thumbnail": "../img/product000.png"
 	},
 	{
-		"id": "6",
 		"title": "Producto 6",
 		"description": "Descripción 6",
 		"code": "Código 6",
@@ -74,10 +67,9 @@
 		"status": false,
 		"stock": 36,
 		"category": "Categoría 6",
-		"thumbnails": "../img/product000.png"
+		"thumbnail": "../img/product000.png"
 	},
 	{
-		"id": "7",
 		"title": "Producto 7",
 		"description": "Descripción 7",
 		"code": "Código 7",
@@ -85,10 +77,9 @@
 		"status": false,
 		"stock": 37,
 		"category": "Categoría 7",
-		"thumbnails": "../img/product000.png"
+		"thumbnail": "../img/product000.png"
 	},
 	{
-		"id": "8",
 		"title": "Producto 8",
 		"description": "Descripción 8",
 		"code": "Código 8",
@@ -96,10 +87,9 @@
 		"status": false,
 		"stock": 38,
 		"category": "Categoría 8",
-		"thumbnails": "../img/product000.png"
+		"thumbnail": "../img/product000.png"
 	},
 	{
-		"id": "9",
 		"title": "Producto 9",
 		"description": "Descripción 9",
 		"code": "Código 9",
@@ -107,6 +97,6 @@
 		"status": false,
 		"stock": 39,
 		"category": "Categoría 9",
-		"thumbnails": "../img/product000.png"
+		"thumbnail": "../img/product000.png"
 	}
 ]
