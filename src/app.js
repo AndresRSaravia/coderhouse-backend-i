@@ -18,6 +18,7 @@ dotenv.config();
 
 // Inicialización de las variables de entorno
 const URLMONGO = process.env.URLMONGO;
+const PORT = process.env.PORT
 
 // Conexión a la base de datos
 console.log(URLMONGO)
@@ -48,6 +49,6 @@ app.use('/products',listProductsRouter);
 app.use('/cartproducts',listCartProductsRouter);
 
 // Inicialización del servidor
-app.listen(8080, () => {
+app.listen(PORT, () => {
 	console.log("Servidor inicializado. Escuchando.");
 });
