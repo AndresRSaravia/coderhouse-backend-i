@@ -63,7 +63,8 @@ router.put('/:cid', async (req,res) => {
 						};
 						(foundCart.products).push(product);
 					} else {
-						foundCart.products[pindex].quantity = quantity;
+						const totalquantity = Number(foundCart.products[pindex].quantity)+Number(element.quantity)
+						foundCart.products[pindex].quantity = String(totalquantity);
 					}
 				}
 			}
@@ -79,7 +80,7 @@ router.put('/:cid', async (req,res) => {
 router.put('/:cid/products/:pid', async (req,res) => {
 	console.log('Id del carrito a actualizar:', req.params.cid);
 	console.log('Id del producto a actualizar:', req.params.pid);
-	console.log('Cantidad a actualizar:', req.body.quantity);
+	console.log('Cantidad a agregar:', req.body.quantity);
 	try{
 		const cid = req.params.cid;
 		const foundCart = await cartModel.findOne({_id: cid});
@@ -103,7 +104,8 @@ router.put('/:cid/products/:pid', async (req,res) => {
 			};
 			(foundCart.products).push(product);
 		} else {
-			foundCart.products[pindex].quantity = quantity;
+			const totalquantity = Number(foundCart.products[pindex].quantity)+Number(quantity)
+			foundCart.products[pindex].quantity = String(totalquantity);
 		}
 		const result = await cartModel.updateOne({_id:cid}, foundCart);
 		return res.send({status: "success", message: "Producto agregado al carrito.", payload: result});
