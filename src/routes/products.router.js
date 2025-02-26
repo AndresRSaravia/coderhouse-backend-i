@@ -114,6 +114,9 @@ router.delete('/:pid', async (req,res) => {
 	try{
 		const pid = req.params.pid;
 		const result = await productModel.deleteOne({_id: pid});
+		if (result.deletedCount == 0){
+			return res.send({status:'error', error: 'Producto ya eliminado.'});
+		}
 		return res.send({status:'success', message: 'Producto eliminado.', payload: result});
 	} catch (error){
 		console.log(error)
